@@ -71,7 +71,7 @@ class _IntroPageState extends State<IntroPage> {
               decoration: BoxDecoration(
                   color: Colors.black,
                   borderRadius: BorderRadiusDirectional.circular(10)),
-              padding: EdgeInsets.all(20),
+              padding: const EdgeInsets.all(20),
               child: const Text(
                 'Shop Now',
                 style: TextStyle(

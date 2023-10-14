@@ -13,6 +13,19 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
+  //add shoe to cart
+  void addShoetoCart(shoe Shoe) {
+    Provider.of<Cart>(context, listen: false).additemtocart(Shoe);
+
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text('Successfully Added'),
+        content: Text('Check your Cart'),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Consumer<Cart>(
@@ -79,6 +92,7 @@ class _ShopPageState extends State<ShopPage> {
                     shoe Shoe = value.getshoelist()[index];
                     return ShoeTile(
                       Shoe: Shoe,
+                      onTap: () => addShoetoCart(Shoe),
                     );
                   }),
             ),
